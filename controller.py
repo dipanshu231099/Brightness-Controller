@@ -1,6 +1,7 @@
 #!/bin/env python3
 import sys
 import os
+from path import *
 from sys import argv
 path="/sys/class/backlight/intel_backlight"
 filename="brightness"
@@ -24,17 +25,17 @@ value=file.read().split('\n')[0]
 value=int(value)
 file.close()
 
-file=open('maxvalue','r')
+file=open(path_of_executable()+'/maxvalue','r')
 MAXVALUE=file.read().split('\n')[0]
 MAXVALUE=int(MAXVALUE)
 file.close()
 
-file=open('minvalue','r')
+file=open(path_of_executable()+'/minvalue','r')
 MINVALUE=file.read().split('\n')[0]
 MINVALUE=int(MINVALUE)
 file.close()
 
-file=open('scale','r')
+file=open(path_of_executable()+'/scale','r')
 SCALE=file.read().split('\n')[0]
 try:
     SCALE=int(SCALE)
@@ -61,7 +62,7 @@ elif(len(argv)>1 and (argv[1]=='--sensitivity' or argv[1]=='-s')):
         exit()
     print('Changing brightness change scale to:',argv[2],"%")
     Range=MAXVALUE-MINVALUE
-    file=open('scale','w')
+    file=open(path_of_executable()+'scale','w')
     file.write(str(int(argv[2])*Range//100))
     file.close()
 
@@ -70,7 +71,7 @@ elif(len(argv)>1 and (argv[1]=='--query' or argv[1]=='-q')):
 
 elif(len(argv)>1 and (argv[1]=='--default' or argv[1]=='-z')):
     Range=MAXVALUE-MINVALUE
-    file=open('scale','w')
+    file=open(path_of_executable()+'scale','w')
     file.write(str(int(5)*Range//100))
     file.close()
 

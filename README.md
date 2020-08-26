@@ -6,12 +6,14 @@ Use controller.py to alter the brightness settings in Linux Ubuntu environment. 
 
 - Run the following command in the present diretory ```sudo ./install```.
 - This would create a bin directory with ```controller.py``` executable.
+- Check thw orking by universal command ```brightnessController```.
 - A reboot for fresh system permissions is required, However the package will still work if you wish to reboot later.
 
 
 ## Running
 
-- run the command using ```bin/controller.py``` from the present directory after installing it.
+- run the commands using ```brightnessController [COMMAND] [OPTIONS]``` after installing it.
+- run the command ```brightnessController``` to display usage after installation.
 - The usage will be displayed if no/invalid arguments are passed.
 
 ## Uninstall
