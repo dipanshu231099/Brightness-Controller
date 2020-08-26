@@ -1,0 +1,15 @@
+#!/bin/bash
+mkdir bin
+cp -v {controller.py,maxvalue,scale,minvalue} bin
+chmod +x bin/controller.py
+
+echo "Installing..."
+sudo ./etc/init.d/brightness-controller.sh
+sudo cp -v etc/init.d/brightness-controller.sh /etc/init.d/
+sudo chmod 744 /etc/init.d/brightness-controller.sh
+sudo chown root:root /etc/init.d/brightness-controller.sh
+sudo ln -s /etc/init.d/brightness-controller.sh /etc/rc2.d/S02brightness-controller.sh
+echo ""
+echo "Installation Complete..."
+echo "Use the command bin/controller.py to see usage"
+echo "Please Restart your computer..."

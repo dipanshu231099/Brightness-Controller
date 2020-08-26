@@ -1,3 +1,4 @@
+#!/bin/env python3
 import sys
 import os
 from sys import argv
@@ -55,7 +56,7 @@ elif(len(argv)>1 and (argv[1]=='--decrease' or argv[1]=='-d')):
 
 elif(len(argv)>1 and (argv[1]=='--sensitivity' or argv[1]=='-s')):
     if len(argv)<=2 or not(1<=int(argv[2])<=99):
-        print("Aborting...")
+        print("Aborting... no/invalid scale value passed...")
         print("Brightness Scale must be between 1 and 99 percent.")
         exit()
     print('Changing brightness change scale to:',argv[2],"%")
@@ -79,7 +80,7 @@ else:
             \n\n--increase (-i):\tTo increase the brightness by scale\
             \n--decrease (-d):\tTo decrease the brightness by scale\
             \n--query (-q):\t\tTo run a query for present status\
-            \n--sensitivity (-s):\tTo change the percentage change in brightness for every increase or decrease in brightness.\
+            \n--sensitivity (-s) [SCALE]:\tTo change the percentage change in brightness for every increase or decrease in brightness.\
             \n--default (-z):\tTo reset settings to original settings.\
         \n')
     exit()

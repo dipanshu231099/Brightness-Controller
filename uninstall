@@ -1,0 +1,5 @@
+#!/bin/bash
+
+rm -r bin
+sudo rm /etc/init.d/brightness-controller.sh
+sudo rm /etc/rc2.d/S02brightness-controller.sh
