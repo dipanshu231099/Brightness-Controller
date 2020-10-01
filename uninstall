@@ -4,3 +4,5 @@ rm -r bin
 sudo rm /etc/init.d/brightness-controller.sh
 sudo rm /etc/rc2.d/S02brightness-controller.sh
 sudo rm /bin/brightnessController
+
+echo "Uninstall completed... Please Restart your PC to avoid any conflicts."
